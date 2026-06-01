@@ -1,0 +1,355 @@
+/* components.css — hero, botões, módulos, FAQ, footer */
+
+/* ============ BOTÕES ============ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 14px 28px;
+  font-size: var(--t-sm);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--r-sm);
+  transition: transform var(--t-fast), background var(--t-base);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #0f0d09;
+}
+.btn--primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn--secondary {
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  backdrop-filter: blur(8px);
+}
+.btn--secondary:hover {
+  background: var(--accent-soft);
+}
+
+.cta-row {
+  display: flex;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============ HERO ============ */
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: var(--s-12);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10, 10, 10, 0) 0%,
+    rgba(10, 10, 10, 0.7) 70%,
+    var(--bg) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* ============ BULLETS ============ */
+
+.bullets {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.bullet {
+  display: flex;
+  gap: var(--s-4);
+  align-items: flex-start;
+  margin-bottom: var(--s-5);
+  font-size: var(--t-md);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.bullet::before {
+  content: '—';
+  color: var(--accent);
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ============ MÓDULOS ============ */
+
+.modules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-4);
+  margin-top: var(--s-6);
+}
+
+.module {
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  transition: transform var(--t-base), border-color var(--t-base);
+}
+
+.module:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.module__img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.module__num {
+  position: absolute;
+  top: var(--s-3);
+  left: var(--s-3);
+  font-family: var(--font-serif);
+  color: var(--accent);
+  font-size: var(--t-xs);
+  letter-spacing: 2px;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  backdrop-filter: blur(4px);
+}
+
+.module__label {
+  position: absolute;
+  bottom: var(--s-3);
+  left: var(--s-3);
+  right: var(--s-3);
+  font-size: var(--t-xs);
+  color: var(--text-soft);
+  background: rgba(10, 10, 10, 0.6);
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 720px) {
+  .modules {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ BANNER DIVISOR ============ */
+
+.banner {
+  height: 320px;
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 720px) {
+  .banner {
+    height: 200px;
+  }
+}
+
+/* ============ SOBRE FERNANDO ============ */
+
+.about {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--s-10);
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about__photo {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+}
+
+.about__photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about__bio p {
+  font-size: var(--t-md);
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin-bottom: var(--s-4);
+}
+
+.about__bio p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+    max-width: 360px;
+  }
+  .about__photo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* ============ FAQ ============ */
+
+.faq {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq__question {
+  width: 100%;
+  text-align: left;
+  padding: var(--s-5) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+  font-size: var(--t-md);
+  font-weight: 500;
+  transition: color var(--t-base);
+}
+
+.faq__question:hover {
+  color: var(--accent);
+}
+
+.faq__icon {
+  color: var(--accent);
+  font-size: 24px;
+  line-height: 1;
+  transition: transform var(--t-base);
+  flex-shrink: 0;
+  margin-left: var(--s-4);
+}
+
+.faq__item.is-open .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--t-base) ease;
+  color: var(--text-soft);
+  font-size: var(--t-sm);
+  line-height: 1.7;
+}
+
+.faq__item.is-open .faq__answer {
+  max-height: 280px;
+  padding-bottom: var(--s-5);
+}
+
+/* ============ CTA FINAL ============ */
+
+.final-cta {
+  text-align: center;
+  padding: var(--s-24) var(--container-pad);
+}
+
+.final-cta__price {
+  font-family: var(--font-serif);
+  color: var(--accent);
+  font-size: var(--t-4xl);
+  line-height: 1;
+  margin: var(--s-3) 0 var(--s-2);
+}
+
+.final-cta__sub {
+  color: var(--text-mute);
+  font-size: var(--t-sm);
+  margin-bottom: var(--s-8);
+}
+
+/* ============ FOOTER ============ */
+
+.footer {
+  padding: var(--s-8) var(--container-pad);
+  font-size: var(--t-xs);
+  color: var(--text-mute);
+  text-align: center;
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border);
+  line-height: 1.8;
+}
+
+.footer a {
+  color: var(--accent);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============ FLOATING WHATSAPP ============ */
+
+.float-wa {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  transition: transform var(--t-base);
+}
+
+.float-wa:hover {
+  transform: scale(1.08);
+}
+
+.float-wa svg {
+  width: 28px;
+  height: 28px;
+}

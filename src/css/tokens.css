@@ -1,0 +1,68 @@
+/* tokens.css — fonte única da identidade visual */
+
+:root {
+  /* cores — paleta "Dourado autoridade" */
+  --bg: #0a0a0a;
+  --bg-soft: #0d0b08;
+  --bg-card: #13110d;
+  --bg-deep: #050505;
+  --border: #1a1610;
+  --border-strong: #2a2218;
+
+  --text: #e5e5e5;
+  --text-soft: #a3a3a3;
+  --text-mute: #666666;
+
+  --accent: #d4a040;
+  --accent-soft: #d4a04022;
+  --accent-strong: #e8b452;
+
+  /* tipografia */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* tamanhos de texto */
+  --t-xs: 11px;
+  --t-sm: 13px;
+  --t-md: 15px;
+  --t-lg: 18px;
+  --t-xl: 24px;
+  --t-2xl: 32px;
+  --t-3xl: 44px;
+  --t-4xl: 64px;
+
+  /* espaçamentos */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* container */
+  --container-max: 1080px;
+  --container-pad: 32px;
+
+  /* radius */
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 12px;
+
+  /* transition */
+  --t-fast: 150ms ease;
+  --t-base: 250ms ease;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --t-3xl: 36px;
+    --t-4xl: 48px;
+    --container-pad: 20px;
+  }
+}

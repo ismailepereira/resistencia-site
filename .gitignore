@@ -1,0 +1,14 @@
+# brainstorming companion (não vai pro repo público)
+.superpowers/
+
+# arquivos de OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor
+.vscode/
+.idea/
+
+# logs
+*.log
