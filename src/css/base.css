@@ -108,3 +108,9 @@ p {
   outline-offset: 3px;
   border-radius: var(--r-sm);
 }
+
+/* ============ REVEAL ANIMATION (GSAP) ============ */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
